@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import AppInput from '../components/AppInput'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined'

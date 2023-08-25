@@ -3,12 +3,15 @@ import { AppButton } from '../components/AppButton'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined'
 import styled from 'styled-components'
 import EmptyPlaceholder from '../components/EmptyPlaceholder'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store'
 
 const ProfilePage = () => {
+  const profiles = useSelector((state:RootState)=>state.profile)
   return (
     <Container>
       <h3>Profile</h3>
-    <EmptyPlaceholder />
+      {profiles && profiles.length > 0 ? <></> : <EmptyPlaceholder />}
       <AddProfileButton
         title='New Profile'
         icon={<AddCircleOutlineOutlinedIcon />}
