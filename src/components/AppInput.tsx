@@ -8,22 +8,28 @@ interface InputProps {
 
 const AppInput = (props: InputProps) => {
   return (
-    <div>
+    <Container>
       {props.title && <Title>{props.title}</Title>}
       <Input placeholder={props.placeholder || ''} />
-    </div>
+    </Container>
   )
 }
 
 export default AppInput
 
+const Container = styled.div`
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+`
+
 const Input = styled.input`
     border: 1px solid #707070;
     height: 30px;
-    width: 200px;
     border-radius: 3px;
 `
 
 const Title = styled.div`
   color: #707070;
+  padding-bottom: 5px;
 `
