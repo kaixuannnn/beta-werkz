@@ -10,7 +10,7 @@ import { profileAction } from '../store/profile-slice'
 import { useNavigate } from 'react-router-dom'
 
 interface FormValues{
-  username: string;
+  name: string;
   age: string;
   gender: string;
   email: string;
@@ -18,7 +18,7 @@ interface FormValues{
 
 const EditProfilePage = () => {
   const initialValues: FormValues = {
-    username: '',
+    name: '',
     age: '',
     gender: 'F',
     email: ''
@@ -46,7 +46,7 @@ const EditProfilePage = () => {
             <AppInput
               className={classes['item-1']}
               placeholder='Enter Username'
-              id='username'
+              id='name'
               title='Name'
             ></AppInput>
             <AppInput

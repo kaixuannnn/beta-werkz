@@ -5,12 +5,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string
   icon?: any
   className?: string
+
 }
 
 export const AppButton = (props: ButtonProps) => {
   return (
     <button className={`${classes.button} ${props.className}`} 
-    type={props.type} onClick={() => console.log('click')} >
+    type={props.type} onClick={props.onClick} >
         {props.icon || <div />}  
       <span>{props.title}</span>
       <div />

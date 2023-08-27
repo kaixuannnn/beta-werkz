@@ -6,7 +6,6 @@ interface ProfileListItemProps {
   gender: string;
   age: string;
   email: string;
-
 }
 
 interface ListInfoItemProps {
@@ -16,7 +15,7 @@ interface ListInfoItemProps {
 
 const ProfilePlaceholder = () =>{
   return (
-    <div className={classes.profileplaceholderbg}>
+    <div className={classes.placeholder}>
       <PersonOutlineOutlinedIcon />
     </div>
   )
@@ -24,8 +23,8 @@ const ProfilePlaceholder = () =>{
 
 const ListInfoItem = (props: ListInfoItemProps) =>{
   return (
-    <div>
-      <div>{props.title}</div>
+    <div className={classes['list-item-container']}>
+      <div className={classes['list-item-title']}>{props.title}</div>
       <div>{props.subtitle}</div>
     </div>
   )
