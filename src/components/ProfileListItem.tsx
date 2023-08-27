@@ -35,7 +35,7 @@ const ListInfoItem = (props: ListInfoItemProps) =>{
 const ProfileListItem = (props: ProfileListItemProps) => {
   const navigate = useNavigate()
   return (
-    <div className={classes.container} onClick={()=>navigate(`/edit-profile/${props.email}`)}>
+    <div className={classes.container} onClick={()=>navigate(`/edit-profile/${props.name}`)}>
       <ProfilePlaceholder />
       <div className={classes.listitem}>
         <div>

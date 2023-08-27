@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { profileAction } from '../store/profile-slice'
 import { useNavigate, useParams } from 'react-router-dom'
 import { RootState } from '../store'
+import { isDisabled } from '@testing-library/user-event/dist/utils'
 
 interface FormValues{
   name: string;
@@ -26,10 +27,12 @@ interface FormValues{
 
 
 const EditProfilePage = () => {
-   const {email} = useParams()
+   const {username} = useParams()
 
+   
+   const isEdit = !!username; 
    const initialValues = useSelector((state:RootState) =>
-              state.profile.items.find(item => item.email === email) || defaultValues) ;
+              state.profile.items.find(item => item.name === username) || defaultValues) ;
  
 
   const dispatch = useDispatch()
@@ -58,6 +61,8 @@ const EditProfilePage = () => {
               placeholder='Enter Username'
               id='name'
               title='Name'
+              disabled={isEdit}
+              message={isEdit? 'Username cannnot be edited':''}
             ></AppInput>
             <AppInput
               className={classes['item-2']}
@@ -80,8 +85,8 @@ const EditProfilePage = () => {
           </div>
           <AppButton
             className={classes.addprofilebutton}
-            title='New Profile'
-            icon={<AddCircleOutlineOutlinedIcon />}
+            title={!isEdit ?'New Profile' :'Save Changes'}
+            icon={!isEdit ? <AddCircleOutlineOutlinedIcon />: null}
             type="submit"
           />
         </Form>

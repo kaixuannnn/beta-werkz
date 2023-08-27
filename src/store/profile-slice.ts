@@ -30,7 +30,7 @@ const profileSlice = createSlice({
         },
         addNewProfile(state, action) {
             const newItem = action.payload
-            const exisitingProfile = state.items.find((profile) => profile.email === newItem.email )
+            const exisitingProfile = state.items.find((profile) => profile.name === newItem.name )
             if (!exisitingProfile) {
                 state.items.push({
                     ...newItem
@@ -38,7 +38,7 @@ const profileSlice = createSlice({
                 state.quantity++
             } else {
                 state.items = state.items.map(item =>
-                  item.email === newItem.email ? newItem : item,
+                  item.name === newItem.name ? newItem : item,
                 )
             }
          
