@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from 'styled-components'
+import classes from './Wrapper.module.css'
 
 interface WrapperProps {
     children: React.ReactChild | React.ReactChild[];
@@ -7,12 +7,9 @@ interface WrapperProps {
 
 const Wrapper = (props:WrapperProps) => {
   return (
-    <Container>{props.children}</Container>
+    <div className={classes.container}>{props.children}</div>
   )
 }
 
 export default Wrapper
 
-const Container = styled.div`
-    padding: 8px;
-`

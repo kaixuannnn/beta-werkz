@@ -1,20 +1,13 @@
-import styled from 'styled-components'
+import classes from './EmptyPlaceholder.module.css'
 
 const EmptyPlaceholder = () => {
   return (
-    <Container>
+    <div className={classes.container}>
       <img src='images/empty-state.png' alt='placeholder' />
       <div>No Profile Yet</div>
       <div>Tap on the button at the bottom to create a new profile.</div>
-    </Container>
+    </div>
   )
 }
 
 export default EmptyPlaceholder
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`

@@ -1,5 +1,4 @@
-import React from 'react'
-import { styled } from 'styled-components'
+import classes from './AppInput.module.css'
 
 interface InputProps {
     placeholder?: string;
@@ -8,28 +7,12 @@ interface InputProps {
 
 const AppInput = (props: InputProps) => {
   return (
-    <Container>
-      {props.title && <Title>{props.title}</Title>}
-      <Input placeholder={props.placeholder || ''} />
-    </Container>
+    <div className={classes.container}>
+      {props.title && <div className={classes.title}>{props.title}</div>}
+      <input className={classes.input} placeholder={props.placeholder || ''} />
+    </div>
   )
 }
 
 export default AppInput
 
-const Container = styled.div`
-  padding: 8px 0;
-  display: flex;
-  flex-direction: column;
-`
-
-const Input = styled.input`
-    border: 1px solid #707070;
-    height: 30px;
-    border-radius: 3px;
-`
-
-const Title = styled.div`
-  color: #707070;
-  padding-bottom: 5px;
-`

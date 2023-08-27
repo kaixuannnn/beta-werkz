@@ -1,7 +1,6 @@
 import React from 'react'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
-import { styled } from 'styled-components';
-
+import classes from './ProfileListItem.module.css'
 interface ProfileListItemProps {
   name: string;
   gender: string;
@@ -17,9 +16,9 @@ interface ListInfoItemProps {
 
 const ProfilePlaceholder = () =>{
   return (
-    <ProfilePlaceholderBg>
+    <div className={classes.profileplaceholderbg}>
       <PersonOutlineOutlinedIcon />
-    </ProfilePlaceholderBg>
+    </div>
   )
 }
 
@@ -35,9 +34,9 @@ const ListInfoItem = (props: ListInfoItemProps) =>{
 
 const ProfileListItem = (props: ProfileListItemProps) => {
   return (
-    <Container>
+    <div className={classes.container}>
       <ProfilePlaceholder />
-      <ListItemsContainer>
+      <div className={classes.listitem}>
         <div>
           <ListInfoItem title='Name' subtitle={props.name} />
           <ListInfoItem title='Gender' subtitle={props.gender} />
@@ -46,32 +45,10 @@ const ProfileListItem = (props: ProfileListItemProps) => {
         <div>
           <ListInfoItem title='Email' subtitle={props.email} />
         </div>
-      </ListItemsContainer>
-    </Container>
+      </div>
+    </div>
   )
 }
 
 export default ProfileListItem
 
-const Container = styled.div`
-  display: flex;
-  background-color: grey;
-`
-const ListItemsContainer = styled.div`
-    width: 100%;
-    > div {
-      display: grid;
-      grid-template-columns: auto 80px 50px;
-    }
-`
-
-const ProfilePlaceholderBg = styled.div`
-  background-color: #f2f2f2;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-`

@@ -1,0 +1,16 @@
+.container {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.input{
+    border: 1px solid #707070;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.title{
+  color: #707070;
+  padding-bottom: 5px;
+}

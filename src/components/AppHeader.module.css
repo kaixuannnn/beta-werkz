@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    border-bottom: 1px transparent solid;
+    padding: 0 10px;
+    border-radius: 10px 10px;
+    box-shadow: 0px 3px 6px #70707029;
+
+}
+
+.user {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}

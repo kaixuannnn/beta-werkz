@@ -1,0 +1,11 @@
+.container {
+  padding: 8px;
+}
+
+.addProfileButton{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right:0;
+    margin: 10px;
+}

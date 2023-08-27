@@ -1,6 +1,4 @@
-import React from 'react'
-import { styled } from 'styled-components'
-
+import classes from './AppButton.module.css';
 
 interface ButtonProps {
     title: string;
@@ -10,21 +8,11 @@ interface ButtonProps {
 
 export const AppButton = (props: ButtonProps) => {
   return (
-    <Button className={props.className} onClick={() => console.log('click')}>
+    <div className={`${classes.button} ${props.className}`} onClick={() => console.log('click')}>
         {props.icon || <div />}  
       <span>{props.title}</span>
       <div />
-    </Button>
+    </div>
   )
 }
 
-const Button = styled.div`
-    background-color: #628df2;
-    padding: 8px;
-    cursor: pointer;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 3px;
-`

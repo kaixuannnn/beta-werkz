@@ -1,0 +1,20 @@
+
+.backgroundImg{
+  position: absolute;
+  left: 0;
+  top:0;
+}
+
+.backgroundImgEnd{
+  position: absolute;
+  transform: rotate(180deg);
+  right: 0;
+  bottom: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
