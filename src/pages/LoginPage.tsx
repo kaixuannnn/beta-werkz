@@ -18,6 +18,7 @@ const initialValues: FormValues = {
 export const LoginPage = () => {
   const navigate = useNavigate()
   const loginHandler = (value: FormValues) => {
+
     navigate('/profile')
   }
   return (
@@ -28,8 +29,10 @@ export const LoginPage = () => {
         alt='background'
       />
       <div>
-        <h1>Login</h1>
-        <h4>Welcome back!</h4>
+        <div className={classes.header}>
+          <h1>Login</h1>
+          <h4>Welcome back!</h4>
+        </div>
         <Formik
           initialValues={initialValues}
           onSubmit={(values, actions) => {
@@ -37,10 +40,10 @@ export const LoginPage = () => {
             actions.setSubmitting(false)
           }}
         >
-          <Form>
-            <AppInput placeholder='username' id='username' />
-            <AppInput placeholder='Password' id='pasword' />
-            <AppButton title='Login' type='submit' />
+          <Form> 
+              <AppInput placeholder='username' id='username' />
+              <AppInput placeholder='Password' id='password' type='password'/>
+              <AppButton className={classes.button} title='Login' type='submit' />
           </Form>
         </Formik>
       </div>
