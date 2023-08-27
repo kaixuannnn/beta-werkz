@@ -1,3 +1,12 @@
 .container {
      padding: 8px;
 }
+
+@media (min-width: 480px){
+  .container{
+     border-style: solid;
+     border-color: #EFF8FF;
+     border-width: 10px 20px 8px 20px;
+     height: 100vh
+  }
+}

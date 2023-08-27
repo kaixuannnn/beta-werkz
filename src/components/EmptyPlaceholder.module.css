@@ -4,3 +4,13 @@
     align-items: center;
     justify-content: center;
 }
+
+.title{
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.subtitle{
+    text-align: center;
+}

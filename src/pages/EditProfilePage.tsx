@@ -5,9 +5,11 @@ import AppSelect from '../components/AppSelect'
 import classes from './EditProfilePage.module.css'
 import { AppButton } from '../components/AppButton'
 import {Formik, Form} from 'formik'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { profileAction } from '../store/profile-slice'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+import { RootState } from '../store'
 
 interface FormValues{
   name: string;
@@ -16,15 +18,24 @@ interface FormValues{
   email: string;
 }
 
+    const defaulValues: FormValues = {
+       name: '',
+       age: '',
+       gender: 'F',
+       email: '',
+     }
+
+
 const EditProfilePage = () => {
-  const initialValues: FormValues = {
-    name: '',
-    age: '',
-    gender: 'F',
-    email: ''
-  }
+   const {email} = useParams()
+   console.log(email)
+   const initialValues = useSelector((state:RootState) =>
+              state.profile.find(item => item.email === email) || defaulValues) ;
+ 
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
+         
 
   const addNewProfileHandler =(value: FormValues)=>{
     dispatch(profileAction.addNewProfile(value))

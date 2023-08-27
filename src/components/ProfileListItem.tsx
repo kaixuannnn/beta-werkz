@@ -1,6 +1,7 @@
 import React from 'react'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import classes from './ProfileListItem.module.css'
+import { useNavigate } from 'react-router-dom';
 interface ProfileListItemProps {
   name: string;
   gender: string;
@@ -32,8 +33,9 @@ const ListInfoItem = (props: ListInfoItemProps) =>{
 
 
 const ProfileListItem = (props: ProfileListItemProps) => {
+  const navigate = useNavigate()
   return (
-    <div className={classes.container}>
+    <div className={classes.container} onClick={()=>navigate(`/edit-profile/${props.email}`)}>
       <ProfilePlaceholder />
       <div className={classes.listitem}>
         <div>

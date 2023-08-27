@@ -1,5 +1,6 @@
 .container {
   padding: 8px;
+  position: relative;
 }
 
 .addProfileButton{
@@ -8,4 +9,14 @@
     left: 0;
     right:0;
     margin: 10px;
+}
+
+@media (min-width: 480px) {
+  .addProfileButton{
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    top: 0;
+    width: 200px;
+  }
 }

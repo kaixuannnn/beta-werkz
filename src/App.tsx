@@ -14,8 +14,11 @@ function App() {
       <Wrapper>
         <Routes>
           <Route path='/login' element={<LoginPage />} />
+
           <Route path='/profile' element={<ProfilePage />} />
+
           <Route path='/edit-profile' element={<EditProfilePage />} />
+          <Route path='/edit-profile/:email' element={<EditProfilePage />} />
         </Routes>
       </Wrapper>
     </div>
