@@ -28,9 +28,9 @@ interface FormValues{
 
 const EditProfilePage = () => {
    const {email} = useParams()
-   console.log(email)
+
    const initialValues = useSelector((state:RootState) =>
-              state.profile.find(item => item.email === email) || defaulValues) ;
+              state.profile.items.find(item => item.email === email) || defaulValues) ;
  
 
   const dispatch = useDispatch()
@@ -47,7 +47,7 @@ const EditProfilePage = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
-          console.log({ values, actions })
+   
           addNewProfileHandler(values);
           actions.setSubmitting(false)
         }}

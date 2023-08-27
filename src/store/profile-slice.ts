@@ -7,20 +7,33 @@ export interface Profile {
     gender: string;
 }
 
-const initialState:Array<Profile> = []
+interface ModelState {
+  items: Array<Profile>
+
+}
+
+const initialState:ModelState ={
+    items: []
+}
 
 const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {
+        replaceProfile(state,action){
+            console.log('tstae', state, action.payload)
+            state.items = action.payload
+          
+        },
         addNewProfile(state, action) {
             const newItem = action.payload
-            const exisitingProfile = state.find((profile) => profile.email === newItem.email )
+            const exisitingProfile = state.items.find((profile) => profile.email === newItem.email )
             if (!exisitingProfile) {
-                state.push({
+                state.items.push({
                     ...newItem
                 })
             }
+         
             
         }
     }

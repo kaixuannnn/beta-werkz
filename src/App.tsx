@@ -5,9 +5,19 @@ import ProfilePage from './pages/ProfilePage';
 import EditProfilePage from './pages/EditProfilePage';
 import AppHeader from './components/AppHeader';
 import Wrapper from './components/Wrapper';
+import { useEffect, useLayoutEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProfileData } from './store/profile-actions';
+import { AppDispatch } from './store';
 
 function App() {
   const {pathname} = useLocation()
+  const dispatch = useDispatch<AppDispatch>()
+
+  useEffect(() => {
+    dispatch(fetchProfileData())
+  }, [dispatch])
+  
   return (
     <div>
       {pathname !== '/login' && <AppHeader username='Joanne' />}

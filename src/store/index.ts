@@ -1,4 +1,4 @@
-import {configureStore} from '@reduxjs/toolkit'
+import {Dispatch, configureStore} from '@reduxjs/toolkit'
 import profileSlice from './profile-slice'
 
 const store = configureStore({
@@ -6,6 +6,9 @@ const store = configureStore({
         profile: profileSlice.reducer
     }
 })
+
+
+export type AppDispatch = typeof store.dispatch 
 
 export type RootState = ReturnType<typeof store.getState>
 
