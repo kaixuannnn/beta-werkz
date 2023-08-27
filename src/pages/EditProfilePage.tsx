@@ -8,7 +8,6 @@ import {Formik, Form} from 'formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { profileAction } from '../store/profile-slice'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useEffect, useMemo, useState } from 'react'
 import { RootState } from '../store'
 
 interface FormValues{

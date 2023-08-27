@@ -14,7 +14,7 @@ export const fetchProfileData = ()=>{
         const profileData = await fetchData()
       
         dispatch(
-            profileAction.replaceProfile(profileData)
+            profileAction.replaceProfile({items:profileData.items, quantity: profileData.quantity})
         )
     }catch{
         console.log('errors')

@@ -9,11 +9,13 @@ export interface Profile {
 
 interface ModelState {
   items: Array<Profile>
+  quantity: number
 
 }
 
 const initialState:ModelState ={
-    items: []
+    items: [],
+    quantity: 0
 }
 
 const profileSlice = createSlice({
@@ -21,8 +23,9 @@ const profileSlice = createSlice({
     initialState,
     reducers: {
         replaceProfile(state,action){
-            console.log('tstae', state, action.payload)
-            state.items = action.payload
+    
+            state.items = action.payload.items
+            state.quantity = action.payload.quantity
           
         },
         addNewProfile(state, action) {
@@ -32,6 +35,7 @@ const profileSlice = createSlice({
                 state.items.push({
                     ...newItem
                 })
+                state.quantity++
             }
          
             
