@@ -10,12 +10,12 @@ const EditProfilePage = () => {
     <div>
       <h4>New Profile</h4>
       <div className={classes.grid}>
-        <AppInput placeholder='Enter Username' title='Name'></AppInput>
-        <AppInput placeholder='Enter number' title='Enter Number'></AppInput>
-        <AppSelect />
-        <AppInput placeholder='Enter email address' title='Email'></AppInput>
+        <AppInput className={classes['item-1']} placeholder='Enter Username' title='Name'></AppInput>
+        <AppInput className={classes['item-2']} placeholder='Enter number' title='Enter Number'></AppInput>
+        <AppSelect className={classes['item-3']} />
+        <AppInput className={classes['item-4']} placeholder='Enter email address' title='Email'></AppInput>
       </div>
-      <AppButton className={classes.addProfileButton}
+      <AppButton className={classes.addprofilebutton}
         title='New Profile'
         icon={<AddCircleOutlineOutlinedIcon />}
       />

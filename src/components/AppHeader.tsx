@@ -1,6 +1,7 @@
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import classes from './AppHeader.module.css'
+import { useNavigate } from 'react-router-dom';
 
 
 interface HeaderProps {
@@ -8,9 +9,10 @@ interface HeaderProps {
 }
 
 const AppHeader = (props: HeaderProps) => {
+  const navigate = useNavigate()
   return (
     <div className={classes.container}>
-      <ArrowBackIcon />
+      <ArrowBackIcon onClick={() => navigate(-1)}/>
       <div className={classes.user}>
         <PermIdentityIcon />
         <div>{props.username}</div>
