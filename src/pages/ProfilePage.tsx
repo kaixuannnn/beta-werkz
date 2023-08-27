@@ -9,6 +9,7 @@ import classes from './ProfilePage.module.css'
 
 const ProfilePage = () => {
   const profiles = useSelector((state:RootState)=>state.profile)
+  console.log(profiles)
   return (
     <div className={classes.container}>
       <h3>Profile</h3>

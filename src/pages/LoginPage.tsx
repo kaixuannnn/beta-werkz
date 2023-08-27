@@ -9,8 +9,8 @@ export const LoginPage = () => {
       <div>
         <h1>Login</h1>
         <h4>Welcome back!</h4>
-        <AppInput placeholder='username' />
-        <AppInput placeholder='Password' />
+        <AppInput placeholder='username' id='username' />
+        <AppInput placeholder='Password' id='pasword'/>
         <AppButton title="Login" />
       </div>
       <img className={classes.backgroundImgEnd} src='/images/bg-1.png' alt='background' />

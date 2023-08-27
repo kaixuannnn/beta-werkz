@@ -1,16 +1,18 @@
+import { Field } from 'formik';
 import classes from './AppInput.module.css'
 
 interface InputProps {
     placeholder?: string;
     title?: string;
     className?: string;
+    id: string;
 }
 
 const AppInput = (props: InputProps) => {
   return (
-    <div className={`${classes.container} ${props.className}`} >
-      {props.title && <div className={classes.title}>{props.title}</div>}
-      <input className={classes.input} placeholder={props.placeholder || ''} />
+    <div  className={`${classes.container} ${props.className}`} >
+      {props.title && <label htmlFor={props.id} className={classes.title}>{props.title}</label>}
+      <Field className={classes.input} placeholder={props.placeholder || ''} id={props.id} name={props.id}/>
     </div>
   )
 }

@@ -1,11 +1,19 @@
+import { Field } from 'formik'
 import classes from './AppSelect.module.css'
 
-const AppSelect = ({title='Gender', id='1', items= [{title: 'Female', value: 'F'}], className=''}) => {
-    const listItems = items.map(item => <option value={item.value}>{item.title}</option>)  
+interface SelectProps {
+  title: string;
+  id: string;
+  items:{title: string, value: string}[];
+  className?: string;
+}
+
+const AppSelect = (props: SelectProps) => {
+    const listItems = props.items.map(item => <option value={item.value} key={item.title}>{item.title}</option>)  
   return (
-    <div className={`${classes.container }${className}`}>
-      <div className={classes.title}>{title}</div>
-      <select className={classes.select} id={id} >{listItems}</select>
+    <div className={`${classes.container} ${props.className}`}>
+      <div className={classes.title}>{props.title}</div>
+      <Field as='select' className={classes.select} id={props.id} name={props.id} >{listItems}</Field>
     </div>
   )
 }
