@@ -10,12 +10,11 @@ import ProfileListItem from '../components/ProfileListItem'
 import { useNavigate } from 'react-router-dom'
 import usePagination from '../hooks/usePagination'
 import { Pagination } from '@mui/material'
-import { ChangeEvent, useState } from 'react'
-
-
+import { ChangeEvent,  useState } from 'react'
 
 
 const ProfilePage = () => {
+
   const profiles = useSelector((state:RootState)=>state.profile.items)
   const navigate = useNavigate()
 

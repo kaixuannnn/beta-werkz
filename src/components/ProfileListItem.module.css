@@ -9,6 +9,7 @@
 
 .listitem {
      overflow: hidden;
+     width: 100%;
     
     > div {
       display: grid;
@@ -36,5 +37,5 @@
 
 .list-item-container{
   padding: 5px 0;
-  min-width: 100px;
+ 
 }

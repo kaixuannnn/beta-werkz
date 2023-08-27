@@ -20,6 +20,9 @@
 
 
 @media (min-width: 480px) {
+  .container{
+    padding-bottom: 0px;
+  }
   .addProfileButton{
     position: absolute;
     bottom: auto;

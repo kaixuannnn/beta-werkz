@@ -1,15 +1,16 @@
-import './App.css';
+
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { LoginPage } from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import EditProfilePage from './pages/EditProfilePage';
 import AppHeader from './components/AppHeader';
 import Wrapper from './components/Wrapper';
-import { useEffect, useLayoutEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { fetchProfileData } from './store/profile-actions';
 import { AppDispatch } from './store';
-
+import ThemeButton from './components/ThemeButton';
+import classes from './App.module.css'
 function App() {
   const {pathname} = useLocation()
   const dispatch = useDispatch<AppDispatch>()
@@ -19,7 +20,7 @@ function App() {
   }, [dispatch])
   
   return (
-    <div>
+    <div className={classes.container}>
       {pathname !== '/login' && <AppHeader username='Joanne' />}
       <Wrapper>
         <Routes>
@@ -31,6 +32,7 @@ function App() {
           <Route path='/edit-profile/:username' element={<EditProfilePage />} />
         </Routes>
       </Wrapper>
+      <ThemeButton />
     </div>
   )
 }
