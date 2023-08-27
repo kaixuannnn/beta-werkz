@@ -26,7 +26,7 @@ const ListInfoItem = (props: ListInfoItemProps) =>{
   return (
     <div className={classes['list-item-container']}>
       <div className={classes['list-item-title']}>{props.title}</div>
-      <div>{props.subtitle}</div>
+      <div className={classes['list-item-subtitle']}>{props.subtitle}</div>
     </div>
   )
 }

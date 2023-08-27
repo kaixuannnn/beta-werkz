@@ -13,7 +13,7 @@ const AppInput = (props: InputProps) => {
   return (
     <div  className={`${classes.container} ${props.className}`} >
       {props.title && <label htmlFor={props.id} className={classes.title}>{props.title}</label>}
-      <Field className={classes.input} placeholder={props.placeholder || ''} name={props.id} {...props}/>
+      <Field className={classes.input} placeholder={props.placeholder || ''} name={props.id} type={props.type} id={props.id}/>
     </div>
   )
 }

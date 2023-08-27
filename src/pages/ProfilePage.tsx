@@ -18,12 +18,20 @@ const ProfilePage = () => {
   return (
     <div className={classes.container}>
       <h3>Profile</h3>
-      {profiles && profiles.length > 0 ? profiles.map(profile => <ProfileListItem {...profile} key={profile.email}/>) : <EmptyPlaceholder />}
+      <div className={classes.grid}>
+        {profiles && profiles.length > 0 ? (
+          profiles.map(profile => (
+            <ProfileListItem {...profile} key={profile.email} />
+          ))
+        ) : (
+          <EmptyPlaceholder />
+        )}
+      </div>
       <AppButton
         className={classes.addProfileButton}
         title='New Profile'
         icon={<AddCircleOutlineOutlinedIcon />}
-        onClick={()=>navigate('/edit-profile')}
+        onClick={() => navigate('/edit-profile')}
       />
     </div>
   )

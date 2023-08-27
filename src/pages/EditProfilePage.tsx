@@ -17,7 +17,7 @@ interface FormValues{
   email: string;
 }
 
-    const defaulValues: FormValues = {
+    const defaultValues: FormValues = {
        name: '',
        age: '',
        gender: 'F',
@@ -29,7 +29,7 @@ const EditProfilePage = () => {
    const {email} = useParams()
 
    const initialValues = useSelector((state:RootState) =>
-              state.profile.items.find(item => item.email === email) || defaulValues) ;
+              state.profile.items.find(item => item.email === email) || defaultValues) ;
  
 
   const dispatch = useDispatch()

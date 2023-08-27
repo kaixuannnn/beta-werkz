@@ -36,6 +36,10 @@ const profileSlice = createSlice({
                     ...newItem
                 })
                 state.quantity++
+            } else {
+                state.items = state.items.map(item =>
+                  item.email === newItem.email ? newItem : item,
+                )
             }
          
             
