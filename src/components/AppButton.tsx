@@ -18,4 +18,3 @@ export const AppButton = (props: ButtonProps) => {
     </button>
   )
 }
-

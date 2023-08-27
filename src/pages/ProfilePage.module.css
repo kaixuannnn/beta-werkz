@@ -1,6 +1,9 @@
 .container {
   padding: 8px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
 }
 
 .addProfileButton{
@@ -9,6 +12,10 @@
     left: 0;
     right:0;
     margin: 10px;
+}
+
+.pagination{
+  align-self: center;
 }
 
 
