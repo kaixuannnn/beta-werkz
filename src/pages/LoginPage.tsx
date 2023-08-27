@@ -18,7 +18,7 @@ const initialValues: FormValues = {
 export const LoginPage = () => {
   const navigate = useNavigate()
   const loginHandler = (value: FormValues) => {
-
+    sessionStorage.setItem('username', value.username);
     navigate('/profile')
   }
   return (

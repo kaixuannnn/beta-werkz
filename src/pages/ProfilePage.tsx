@@ -3,12 +3,12 @@ import { AppButton } from '../components/AppButton'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined'
 
 import EmptyPlaceholder from '../components/EmptyPlaceholder'
-import {useSelector, shallowEqual } from 'react-redux'
+import {useSelector} from 'react-redux'
 import {RootState } from '../store'
 import classes from './ProfilePage.module.css'
 import ProfileListItem from '../components/ProfileListItem'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+
 
 
 const ProfilePage = () => {

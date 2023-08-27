@@ -19,7 +19,7 @@ const AppHeader = (props: HeaderProps) => {
       <ArrowBackIcon onClick={() => navigate(-1)}/>
       <div className={classes.user}>
         <PermIdentityIcon />
-        <div>{props.username}</div>
+        <div>{sessionStorage.getItem('username') || ''}</div>
       </div>
      {screenWidth < screenSizes.mobile ? <img
         src='images/color-theme.png'
