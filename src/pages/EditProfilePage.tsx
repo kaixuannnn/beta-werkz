@@ -44,7 +44,7 @@ const EditProfilePage = () => {
     navigate('/profile')
   }
   return (
-    <div>
+    <div className={classes.container}>
       <h4>New Profile</h4>
       <Formik
         initialValues={initialValues}

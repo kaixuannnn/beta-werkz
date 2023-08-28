@@ -5,6 +5,7 @@
   border-radius: 3px;
   padding: 8px;
   margin: 8px 0;
+  cursor: pointer;
 }
 
 .listitem {
@@ -39,3 +40,4 @@
   padding: 5px 0;
  
 }
+

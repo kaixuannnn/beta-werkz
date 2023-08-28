@@ -1,3 +1,6 @@
+.container{
+  position: relative;
+}
 .grid{
   display: grid;
   grid-template-columns: auto auto;
@@ -25,6 +28,7 @@
   .grid{
     width: 80%;
     grid-template-columns: auto 150px;
+
   }
   .item-1{
     grid-column: auto;
@@ -41,5 +45,14 @@
 
   .item-2{
     order: 2
+  }
+
+  .addprofilebutton{
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    top: 0;
+    width: 200px;
+    margin: 0;
   }
 }

@@ -21,9 +21,13 @@ function App() {
   
   return (
     <div className={classes.container}>
-      {pathname !== '/login' && <AppHeader username='Joanne' />}
+      {pathname !== '/login' && pathname !== '/' && <AppHeader username='Joanne' />}
       <Wrapper>
         <Routes>
+          <Route
+            path='/'
+            element={<LoginPage />}
+          />
           <Route path='/login' element={<LoginPage />} />
 
           <Route path='/profile' element={<ProfilePage />} />
