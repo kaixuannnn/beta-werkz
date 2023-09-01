@@ -11,9 +11,12 @@ import { fetchProfileData } from './store/profile-actions';
 import { AppDispatch } from './store';
 import ThemeButton from './components/ThemeButton';
 import classes from './App.module.css'
+import useScreenWidth from './hooks/useScreenWidth';
+import { screenSizes } from './utils/breakpoints';
 function App() {
   const {pathname} = useLocation()
   const dispatch = useDispatch<AppDispatch>()
+  const screenWidth = useScreenWidth()
 
   useEffect(() => {
     dispatch(fetchProfileData())
@@ -21,13 +24,12 @@ function App() {
   
   return (
     <div className={classes.container}>
-      {pathname !== '/login' && pathname !== '/' && <AppHeader username='Joanne' />}
+      {pathname !== '/login' && pathname !== '/' && (
+        <AppHeader username='Joanne' />
+      )}
       <Wrapper>
         <Routes>
-          <Route
-            path='/'
-            element={<LoginPage />}
-          />
+          <Route path='/' element={<LoginPage />} />
           <Route path='/login' element={<LoginPage />} />
 
           <Route path='/profile' element={<ProfilePage />} />
@@ -36,7 +38,7 @@ function App() {
           <Route path='/edit-profile/:username' element={<EditProfilePage />} />
         </Routes>
       </Wrapper>
-      <ThemeButton />
+      {screenWidth > screenSizes.mobile && <ThemeButton />}
     </div>
   )
 }
